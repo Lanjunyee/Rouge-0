@@ -1,0 +1,321 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+
+[sub_resource type="StyleBoxFlat" id="panel_bg"]
+bg_color = Color(0.071, 0.071, 0.086, 0.94)
+border_width_left = 1
+border_width_right = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.165, 0.165, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="btn_normal"]
+bg_color = Color(0.141, 0.141, 0.165, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="btn_hover"]
+bg_color = Color(0.2, 0.2, 0.235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="slider_track"]
+bg_color = Color(0.157, 0.157, 0.18, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_left = 2
+corner_radius_bottom_right = 2
+
+[sub_resource type="StyleBoxFlat" id="slider_grab"]
+bg_color = Color(0.333, 0.533, 0.8, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_left = 7
+corner_radius_bottom_right = 7
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078, 0.078, 0.094, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -260.0
+offset_right = 160.0
+offset_bottom = 260.0
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ROUGE 0"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.831, 0.702, 0.196, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="Spacer1" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 14)
+
+[node name="BestLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "最高分 - · 击杀 -"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 10)
+
+[node name="NewGameBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 96)
+text = "开始游戏"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="ContinueBtn" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 96)
+text = "继续游戏"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="SettingsBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 96)
+text = "设置"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="QuitBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 72)
+text = "退出"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="SettingsPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -155.0
+offset_right = 135.0
+offset_bottom = 155.0
+theme_override_styles/panel = SubResource("panel_bg")
+
+[node name="SettingsVBox" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 254.0
+offset_bottom = 296.0
+theme_override_constants/separation = 10
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+text = "设置"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="BgmRow" type="HBoxContainer" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BgmLabel" type="Label" parent="SettingsPanel/SettingsVBox/BgmRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "音乐"
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="BgmSlider" type="HSlider" parent="SettingsPanel/SettingsVBox/BgmRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+theme_override_styles/slider = SubResource("slider_grab")
+theme_override_styles/grabber_area = SubResource("slider_grab")
+theme_override_styles/grabber = SubResource("slider_grab")
+theme_override_styles/slider_track = SubResource("slider_track")
+
+[node name="BgmValue" type="Label" parent="SettingsPanel/SettingsVBox/BgmRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "80%"
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="SfxRow" type="HBoxContainer" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SfxLabel" type="Label" parent="SettingsPanel/SettingsVBox/SfxRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "音效"
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="SfxSlider" type="HSlider" parent="SettingsPanel/SettingsVBox/SfxRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+theme_override_styles/slider = SubResource("slider_grab")
+theme_override_styles/grabber_area = SubResource("slider_grab")
+theme_override_styles/grabber = SubResource("slider_grab")
+theme_override_styles/slider_track = SubResource("slider_track")
+
+[node name="SfxValue" type="Label" parent="SettingsPanel/SettingsVBox/SfxRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "80%"
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="FpsRow" type="HBoxContainer" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FpsLabel" type="Label" parent="SettingsPanel/SettingsVBox/FpsRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "帧率"
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="FpsOption" type="OptionButton" parent="SettingsPanel/SettingsVBox/FpsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "60"
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="OrientationBtn" type="Button" parent="SettingsPanel/SettingsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 72)
+text = "切换横屏"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.831, 0.702, 0.196, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="CloseSettingsBtn" type="Button" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 72)
+text = "关闭"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="WeaponSelectPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -230.0
+offset_right = 155.0
+offset_bottom = 230.0
+theme_override_styles/panel = SubResource("panel_bg")
+
+[node name="WeaponSelectVBox" type="VBoxContainer" parent="WeaponSelectPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 294.0
+offset_bottom = 446.0
+theme_override_constants/separation = 10
+
+[node name="SelectTitle" type="Label" parent="WeaponSelectPanel/WeaponSelectVBox"]
+layout_mode = 2
+text = "选择初始武器"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.831, 0.702, 0.196, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="WeaponGrid" type="GridContainer" parent="WeaponSelectPanel/WeaponSelectVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 8
+
+[node name="StartBtn" type="Button" parent="WeaponSelectPanel/WeaponSelectVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 72)
+text = "开始"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.831, 0.702, 0.196, 1)
+theme_override_font_sizes/font_size = 22
+disabled = true
+
+[node name="BackBtn" type="Button" parent="WeaponSelectPanel/WeaponSelectVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+text = "返回"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 18

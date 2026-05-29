@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://2vqkj41uioo8"]
+
+[ext_resource type="FontFile" uid="uid://om4wta8qfkhg" path="res://resources/ui/simhei.ttf" id="1_qfwp4"]
+
+[resource]
+default_font = ExtResource("1_qfwp4")
+default_font_size = 14

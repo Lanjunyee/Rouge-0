@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dm5jx58v7a7cq"]
+
+[ext_resource type="Script" uid="uid://bh33x81bresxp" path="res://scripts/enemies/bomber_enemy.gd" id="1_bomber"]
+[ext_resource type="Texture2D" uid="uid://c72hm2fsdyrml" path="res://resources/enemies/tile_0111.png" id="2_body_tex"]
+
+[sub_resource type="CircleShape2D" id="bomber_shape"]
+radius = 20.0
+
+[node name="BomberEnemy" type="CharacterBody2D" unique_id=1481627384]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_bomber")
+enemy_id = "bomber"
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=1825163477]
+scale = Vector2(2, 2)
+texture = ExtResource("2_body_tex")
+
+[node name="FaceSprite" type="Sprite2D" parent="." unique_id=1286867751]
+visible = false
+scale = Vector2(0.28, 0.28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1908316254]
+shape = SubResource("bomber_shape")

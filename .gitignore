@@ -1,0 +1,20 @@
+# Godot 4 auto-generated files
+.godot/
+*.import
+*.uid
+
+# Build artifacts
+*.apk
+*.aab
+*.apk.idsig
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python temp files (used during dev)
+_gen_*.py
+
+# Reasonix internal
+.reasonix/

@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_bg"]
+[ext_resource type="Script" path="res://scripts/exp_spawner.gd" id="2_spawner"]
+[ext_resource type="Script" path="res://scripts/obstacles/obstacle_spawner.gd" id="8_obstacle"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/level_up_ui.tscn" id="5_levelup"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over.tscn" id="6_gameover"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="7_pause"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_bg")
+
+[node name="ExpSpawner" type="Node2D" parent="."]
+script = ExtResource("2_spawner")
+
+[node name="ObstacleSpawner" type="Node2D" parent="."]
+script = ExtResource("8_obstacle")
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector2(360, 640)
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="LevelUpUI" parent="." instance=ExtResource("5_levelup")]
+
+[node name="GameOverUI" parent="." instance=ExtResource("6_gameover")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_pause")]

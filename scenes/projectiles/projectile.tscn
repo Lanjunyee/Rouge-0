@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfdyxoaslvmui"]
+
+[ext_resource type="Script" uid="uid://cxigcj4e07wln" path="res://scripts/projectiles/projectile.gd" id="1_proj"]
+[ext_resource type="Texture2D" uid="uid://bj0uacb7sba7c" path="res://resources/weapons/platformPack_tile011.png" id="2_proj_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_proj"]
+
+[node name="Projectile" type="Area2D" unique_id=815022139]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_proj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=602016672]
+self_modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_proj_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=86612299]
+shape = SubResource("CircleShape2D_proj")

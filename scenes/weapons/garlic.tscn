@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/garlic.gd" id="1_garlic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_garlic"]
+radius = 60.0
+
+[node name="Garlic" type="Node2D"]
+script = ExtResource("1_garlic")
+
+[node name="GarlicArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GarlicArea"]
+shape = SubResource("CircleShape2D_garlic")

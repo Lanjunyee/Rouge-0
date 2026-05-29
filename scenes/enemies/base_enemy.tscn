@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c84ee1wo6ui24"]
+
+[ext_resource type="Script" uid="uid://bt50wy35qj44f" path="res://scripts/enemies/base_enemy.gd" id="1_enemy"]
+[ext_resource type="Texture2D" uid="uid://dtv0a7iq5eaeq" path="res://resources/enemies/green_body_squircle.png" id="2_body_tex"]
+[ext_resource type="Texture2D" uid="uid://c47w03y111txn" path="res://resources/enemies/face_b.png" id="3_face_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
+radius = 18.0
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=30232800]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_enemy")
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=946760034]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("2_body_tex")
+
+[node name="FaceSprite" type="Sprite2D" parent="." unique_id=260081564]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("3_face_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=68836580]
+shape = SubResource("CircleShape2D_enemy")

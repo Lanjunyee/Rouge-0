@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_gameover"]
+
+[sub_resource type="StyleBoxFlat" id="panel_bg"]
+bg_color = Color(0.071, 0.071, 0.086, 0.94)
+border_width_left = 1
+border_width_right = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.165, 0.165, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="btn_normal"]
+bg_color = Color(0.141, 0.141, 0.165, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="btn_hover"]
+bg_color = Color(0.2, 0.2, 0.235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[node name="GameOverUI" type="CanvasLayer"]
+layer = 30
+script = ExtResource("1_gameover")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -140.0
+offset_right = 150.0
+offset_bottom = 140.0
+theme_override_styles/panel = SubResource("panel_bg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 264.0
+theme_override_constants/separation = 14
+
+[node name="GameOverLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "游戏结束"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.902, 0.29, 0.29, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="TimeLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "存活时间: 00:00"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 13
+
+[node name="KillLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "击杀数: 0"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.588, 0.588, 0.627, 1)
+theme_override_font_sizes/font_size = 13
+
+[node name="LevelLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "最终等级: 1"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.831, 0.702, 0.196, 1)
+theme_override_font_sizes/font_size = 13
+
+[node name="MenuButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "返回主菜单"
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 15
